@@ -34,7 +34,7 @@ dotenv.config({ path: path.resolve(__dirname, "../../../.env") });
  **/
 const whitelist = [
   ...keysInDotEnvFile,
-  ...get(appPackage, "react-dotenv.whitelist", []),
+  ...get(appPackage, "react-dynamic-enviroment.whitelist", []),
 ];
 
 /**

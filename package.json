@@ -1,10 +1,14 @@
 {
   "name": "react-dynamic-enviroment",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "Load environment variables dynamically in production for your React applications",
   "module": "./src/index.js",
   "bin": {
     "react-dynamic-enviroment": "./src/cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ducnv1997/react-dynamic-enviroment"
   },
   "author": "",
   "license": "MIT",
