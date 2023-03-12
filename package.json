@@ -1,0 +1,29 @@
+{
+  "name": "react-dynamic-enviroment",
+  "version": "1.0.5",
+  "description": "Load environment variables dynamically in production for your React applications",
+  "module": "./src/index.js",
+  "bin": {
+    "react-dynamic-enviroment": "./src/cli.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "dotenv": "^16.0.3",
+    "envfile": "^6.18.0",
+    "lodash.get": "^4.4.2",
+    "lodash.pick": "^4.4.0",
+    "prettier": "^2.8.4"
+  },
+  "keywords": [
+    "environment",
+    "react",
+    "react enviroment",
+    "build env",
+    "env",
+    "variables",
+    "reactjs"
+
+  ]
+}
