@@ -1,6 +1,6 @@
 {
   "name": "react-dynamic-enviroment",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Load environment variables dynamically in production for your React applications",
   "module": "./src/index.js",
   "bin": {
@@ -31,6 +31,7 @@
     "react dynamic enviroment",
     "react dynamic env",
     "dynamic env",
-    "build enviroment"
+    "build enviroment",
+    "dynamic environment"
   ]
 }
