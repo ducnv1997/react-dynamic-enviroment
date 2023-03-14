@@ -34,7 +34,7 @@ dotenv.config({ path: path.resolve(__dirname, "../../../.env") });
  **/
 const whitelist = [
   ...keysInDotEnvFile,
-  ...get(appPackage, "react-dynamic-enviroment.whitelist", []),
+  ...get(appPackage, "react-dynamic-environment.whitelist", []),
 ];
 
 /**
@@ -80,10 +80,10 @@ fs.access(buildIndexHtmlPath, fs.constants.W_OK, (err) => {
 function patchIndexHtml(html) {
   let $ = cheerio.load(html);
 
-  if ($("script#react-dynamic-enviroment").length) {
-    $("script#react-dynamic-enviroment").attr("src", `${homepage}/env.js`);
+  if ($("script#react-dynamic-environment").length) {
+    $("script#react-dynamic-environment").attr("src", `${homepage}/env.js`);
   } else {
-    $("head").append(`\t<script id="react-dynamic-enviroment" src="${homepage}/env.js"></script>\n\t`);
+    $("head").append(`\t<script id="react-dynamic-environment" src="${homepage}/env.js"></script>\n\t`);
   }
 
   return prettier.format($.html(), { parser: "html" });
