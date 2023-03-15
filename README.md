@@ -36,9 +36,9 @@ Open your project's `package.json` file and:
     "serve": "^11.3.2"
   },
   "scripts": {
-    "start": "npm exec react-dynamic-environment && react-scripts start", // <-- append command
-    "build": "npm exec react-dynamic-environment && react-scripts build", // <-- append command
-    "serve": "npm exec react-dynamic-environment && serve build", // <-- append command
+    "start": "npx react-dynamic-environment && react-scripts start", // <-- append command
+    "build": "npx exec react-dynamic-environment && react-scripts build", // <-- append command
+    "serve": "npx exec react-dynamic-environment && serve build", // <-- append command
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
