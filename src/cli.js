@@ -81,9 +81,9 @@ function patchIndexHtml(html) {
   let $ = cheerio.load(html);
 
   if ($("script#react-dynamic-environment").length) {
-    $("script#react-dynamic-environment").attr("src", `${homepage}/env.js`);
+    $("script#react-dynamic-environment").attr("src", `/env.js`);
   } else {
-    $("head").append(`\t<script id="react-dynamic-environment" src="${homepage}/env.js"></script>\n\t`);
+    $("head").append(`\t<script id="react-dynamic-environment" src="/env.js"></script>\n\t`);
   }
 
   return prettier.format($.html(), { parser: "html" });
