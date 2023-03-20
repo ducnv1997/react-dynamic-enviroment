@@ -18,7 +18,7 @@ npm install react-dynamic-environment
 Open your project's `package.json` file and:
 
 1. Add an `.env` file to your project root (or just load from the system environment variables).
-1. Add the `react-dynamic-environment` or `npm exec react-dynamic-environment` NPM command to your `start`, `build` (and your `serve` commands).
+1. Add the `react-dynamic-environment` or `npx react-dynamic-environment` NPM command to your `start`, `build` (and your `serve` commands).
 1. Add the `react-dynamic-environment.whitelist` property to `package.json` to specify which variables you need exposed. (Required only if your project does not have a .env file during build)
 
 ### Example
@@ -36,9 +36,9 @@ Open your project's `package.json` file and:
     "serve": "^11.3.2"
   },
   "scripts": {
-    "start": "npx react-dynamic-environment && react-scripts start", // <-- append command
-    "build": "npx exec react-dynamic-environment && react-scripts build", // <-- append command
-    "serve": "npx exec react-dynamic-environment && serve build", // <-- append command
+    "start": "react-dynamic-environment && react-scripts start", // <-- append command
+    "build": "react-dynamic-environment && react-scripts build", // <-- append command
+    "serve": "npx react-dynamic-environment && serve build", // <-- append command
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
