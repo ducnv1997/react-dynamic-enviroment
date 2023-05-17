@@ -58,6 +58,11 @@ fs.access(path.resolve(__dirname, "../../../build"), fs.constants.W_OK, (err) =>
   fs.writeFileSync(path.resolve(__dirname, "../../../build/env.js"), envFile);
 });
 
+fs.access(path.resolve(__dirname, "../../../dist"), fs.constants.W_OK, (err) => {
+  if (err) return;
+  fs.writeFileSync(path.resolve(__dirname, "../../../dist/env.js"), envFile);
+});
+
 /**
  * Patch app's public/index.html
  */
