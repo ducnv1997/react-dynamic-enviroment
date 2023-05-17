@@ -61,7 +61,11 @@ fs.access(path.resolve(__dirname, "../../../build"), fs.constants.W_OK, (err) =>
 /**
  * Patch app's public/index.html
  */
-const publicIndexHtmlPath = path.resolve(__dirname, "../../../public/index.html");
+let publicIndexHtmlPath = path.resolve(__dirname, "../../../public/index.html");
+if (!fs.existsSync(publicIndexHtmlPath)) {
+  publicIndexHtmlPath = path.resolve(__dirname, "../../../index.html");
+}
+
 const publicIndexHtmlSource = fs.readFileSync(publicIndexHtmlPath);
 const publicIndexIndexPatched = patchIndexHtml(publicIndexHtmlSource);
 fs.writeFileSync(publicIndexHtmlPath, publicIndexIndexPatched);
@@ -79,11 +83,13 @@ fs.access(buildIndexHtmlPath, fs.constants.W_OK, (err) => {
 
 function patchIndexHtml(html) {
   let $ = cheerio.load(html);
+  var envFilePath = `/env.js`;
+
 
   if ($("script#react-dynamic-environment").length) {
-    $("script#react-dynamic-environment").attr("src", `/env.js`);
+    $("script#react-dynamic-environment").attr("src", envFilePath);
   } else {
-    $("head").append(`\t<script id="react-dynamic-environment" src="/env.js"></script>\n\t`);
+    $("head").append(`\t<script id="react-dynamic-environment" src="${envFilePath}"></script>\n\t`);
   }
 
   return prettier.format($.html(), { parser: "html" });
